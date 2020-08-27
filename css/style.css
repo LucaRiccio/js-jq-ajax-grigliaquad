@@ -1,14 +1,15 @@
 body {
   position: relative;
+  font-family: sans-serif;
+  font-size: 22px;
 }
 
 .wrapper {
   width: 600px;
   height: 600px;
-  /* position: absolute;  */
-  /* top: 50%; */
-  /* left: 50%; */
-  /* transform: translate(-50%); */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .square {
@@ -18,13 +19,16 @@ body {
   float: left;
   box-sizing: border-box;
 
-
 }
 
 .yellow {
-  background-color: yellow;
+  background-color: gold;
+  text-align: center;
+  line-height: 100px;
 }
 
 .green {
-  background-color: lightgreen;
+  background-color: MediumAquaMarine;
+  text-align: center;
+  line-height: 100px;
 }

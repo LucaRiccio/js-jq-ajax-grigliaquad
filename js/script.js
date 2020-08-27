@@ -22,11 +22,11 @@ $(document).ready(function(){
         success: function (risposta) {
           // numero.text(risposta.response); // Spostata all'interno del ciclo
           if (numero.hasClass("cliccato")){ // Se var numero ha classe "cliccato"..
-            alert("casella già cliccata"); // Parte l'alert.
+            alert("Casella già cliccata"); // Parte l'alert.
           }else {
             numero.addClass("cliccato"); // Aggiungi la classe "cliccato".
             numero.text(risposta.response);
-            if (risposta.response <=5){ 
+            if (risposta.response <=5){
               numero.addClass("yellow");
             } else {
               numero.addClass("green");
