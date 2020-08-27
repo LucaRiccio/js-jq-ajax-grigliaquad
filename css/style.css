@@ -5,17 +5,20 @@ body {
 .wrapper {
   width: 600px;
   height: 600px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%);
+  /* position: absolute;  */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%); */
 }
 
 .square {
-  width: 15%;
-  height: 15%;
+  width: calc(100% / 6);
+  height: calc(100% / 6);
   border: 1px solid black;
-  display: inline-block;
+  float: left;
+  box-sizing: border-box;
+
+
 }
 
 .yellow {

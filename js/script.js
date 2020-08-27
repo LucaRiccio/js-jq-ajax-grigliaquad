@@ -4,18 +4,34 @@
 // Il numero ottenuto appare al centro del quadrato.
 
 $(document).ready(function(){
-  for (var i = 0; i < 36; i++) {
+
+  //Creazione ed aggiunta dei 36 quadratini al DOM.
+  for (var i = 0; i < 36; i++){
     $(".wrapper").append("<div class='square'></div>");
-  }
+  };
+
+  //Al click di un elemento con classe "square" salvo il this in una variabile.
   $(".square").click(function(){
     var numero = $(this);
 
+    //Richiesta AJAX
     $.ajax(
       {
         url: "https://flynn.boolean.careers/exercises/api/random/int",
         method: "GET",
         success: function (risposta) {
-        numero.text(risposta.response);
+          // numero.text(risposta.response); // Spostata all'interno del ciclo
+          if (numero.hasClass("cliccato")){ // Se var numero ha classe "cliccato"..
+            alert("casella già cliccata"); // Parte l'alert.
+          }else {
+            numero.addClass("cliccato"); // Aggiungi la classe "cliccato".
+            numero.text(risposta.response);
+            if (risposta.response <=5){ 
+              numero.addClass("yellow");
+            } else {
+              numero.addClass("green");
+            }
+          }
         },
         error: function (){
         alert("E' avvenuto un errore.");
@@ -24,34 +40,3 @@ $(document).ready(function(){
     );
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $.ajax(
-//   {
-//    url: "https://flynn.boolean.careers/exercises/api/random/int",
-//    method: "GET",
-//    success: function (data, stato) {
-//    $("#risultati").html(data);
-//    },
-//    error: function (richiesta, stato, errori) {
-//    alert("E' avvenuto un errore. " + errori);
-//    }
-//   }
-// );
